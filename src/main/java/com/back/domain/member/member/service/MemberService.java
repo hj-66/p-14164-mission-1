@@ -13,7 +13,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     public long count() {
-        return memberRepository.count();
+        return memberRepository.qCount();
     }
 
     public Member join(String username, String password, String nickname) {
@@ -23,6 +23,6 @@ public class MemberService {
     }
 
     public Optional<Member> findByUsername(String username) {
-        return memberRepository.findByUsername(username);
+        return memberRepository.findQByUsername(username);
     }
 }
